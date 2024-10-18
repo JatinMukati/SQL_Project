@@ -4,8 +4,18 @@
 -- 3. Null vzalues or blank values
 -- 4. Remove Columns or rows 
 
--- Identifying duplicates and Cleaning
+-- https://www.kaggle.com/datasets/swaptr/layoffs-2022
 
+-- first thing we want to do is create a staging table. This is the one we will work in and clean the data. We want a table with the raw data in case something happens
+CREATE TABLE layoffs_staging 
+LIKE layoffs
+
+INSERT layoffs_staging 
+SELECT * FROM world_layoffs.layoffs
+
+
+
+-- Identifying duplicates and Cleaning
 with duplicate_cte as(
 SELECT * ,
 ROW_NUMBER() OVER(PARTITION BY company, location, industry, total_laid_off, percentage_laid_off,'date',stage, funds_raised_millions,country) as row_num
@@ -15,8 +25,6 @@ FROM layoffs_staging
 SELECT *
 FROM duplicate_cte
 where row_num > 1
-layoffs_staginglayoffs_staging
-
 
 -- Another way for the same
 SELECT *
