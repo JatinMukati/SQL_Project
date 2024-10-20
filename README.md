@@ -54,7 +54,3 @@ While this README provides a summary of the analysis, data visualizations would 
 
 Contributions and suggestions for further analysis are welcome!
 
-
-## License
-
-[Choose a license (e.g., MIT License)](LICENSE)
