@@ -200,15 +200,15 @@ FROM layoffs_staging2;
 -- With this info, we are just going to look around and see what we find!
 
 SELECT * 
-FROM world_layoffs.layoffs_staging2;
+FROM layoffs_staging2;
 
 -- Max Layoffs
 SELECT MAX(total_laid_off)
-FROM world_layoffs.layoffs_staging2;
+FROM layoffs_staging2;
 
 -- Looking at Percentage to see how big these layoffs were
 SELECT MAX(percentage_laid_off), MIN(percentage_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 WHERE percentage_laid_off IS NOT NULL;
 
 -- Which companies had 100% of their company laid off
@@ -224,52 +224,52 @@ ORDER BY funds_raised_millions DESC;
 
 -- Companies with the biggest single layoff
 SELECT company, total_laid_off
-FROM world_layoffs.layoffs_staging
+FROM layoffs_staging
 ORDER BY total_laid_off DESC
 LIMIT 5;
 
 -- Companies with the most total layoffs
 SELECT company, SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY company
 ORDER BY SUM(total_laid_off) DESC
 LIMIT 10;
 
 -- Layoffs by location
 SELECT location, SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY location
 ORDER BY SUM(total_laid_off) DESC
 LIMIT 10;
 
 -- Layoffs by country
 SELECT country, SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY country
 ORDER BY SUM(total_laid_off) DESC;
 
 -- Layoffs by year
 SELECT YEAR(date), SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY YEAR(date)
 ORDER BY YEAR(date) ASC;
 
 -- Layoffs by industry
 SELECT industry, SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY industry
 ORDER BY SUM(total_laid_off) DESC;
 
 -- Layoffs by stage
 SELECT stage, SUM(total_laid_off)
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY stage
 ORDER BY SUM(total_laid_off) DESC;
 
 -- Companies with the most layoffs per year
 WITH Company_Year AS (
   SELECT company, YEAR(date) AS years, SUM(total_laid_off) AS total_laid_off
-  FROM world_layoffs.layoffs_staging2
+  FROM layoffs_staging2
   GROUP BY company, YEAR(date)
 ),
 Company_Year_Rank AS (
@@ -284,14 +284,14 @@ ORDER BY years ASC, total_laid_off DESC;
 
 -- Rolling total of layoffs per month
 SELECT SUBSTRING(date, 1, 7) AS dates, SUM(total_laid_off) AS total_laid_off
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 GROUP BY dates
 ORDER BY dates ASC;
 
 -- Use it in a CTE so we can query off of it
 WITH DATE_CTE AS (
   SELECT SUBSTRING(date, 1, 7) AS dates, SUM(total_laid_off) AS total_laid_off
-  FROM world_layoffs.layoffs_staging2
+  FROM layoffs_staging2
   GROUP BY dates
   ORDER BY dates ASC
 )
