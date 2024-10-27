@@ -28,10 +28,10 @@ The cleaned dataset was then explored to identify key trends and patterns in the
 
 ## Key Findings (Examples)
 
-* **Biggest Layoffs:**  [Mention the company with the largest single layoff event and the number of layoffs].
-* **Most Affected Industries:**  [List the top 2-3 industries with the most layoffs].
-* **Geographic Trends:** [Highlight any significant geographic trends observed in the data].
-* **Layoff Trends Over Time:**  [Describe any noticeable trends in layoffs over the time period covered by the dataset].
+* **Biggest Layoffs:**  <!-- [Mention the company with the largest single layoff event and the number of layoffs].-->
+* **Most Affected Industries:**  <!-- [List the top 2-3 industries with the most layoffs].-->
+* **Geographic Trends:** <!-- [Highlight any significant geographic trends observed in the data].-->
+* **Layoff Trends Over Time:**  <!-- [Describe any noticeable trends in layoffs over the time period covered by the dataset].-->
 
 
 ## SQL Queries
