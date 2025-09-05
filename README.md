@@ -28,10 +28,11 @@ The cleaned dataset was then explored to identify key trends and patterns in the
 
 ## Key Findings (Examples)
 
-* **Biggest Layoffs:**  <!-- [Mention the company with the largest single layoff event and the number of layoffs].-->
-* **Most Affected Industries:**  <!-- [List the top 2-3 industries with the most layoffs].-->
-* **Geographic Trends:** <!-- [Highlight any significant geographic trends observed in the data].-->
-* **Layoff Trends Over Time:**  <!-- [Describe any noticeable trends in layoffs over the time period covered by the dataset].-->
+* ## Key Findings (Examples)
+* **Biggest Layoffs:** Google (12,000), Meta (11,000), Microsoft (10,000), Amazon (10,000), and Ericsson (8,500) recorded the largest single layoff events.  
+* **Most Affected Industries:** The Consumer (46,682 layoffs) and Retail (43,613 layoffs) sectors were the most impacted, followed by Other (36,289), Transportation (31,998), and Finance (28,344).  
+* **Geographic Trends:** The United States was the hardest hit with 256,474 layoffs, far exceeding other countries like India (35,993), Netherlands (17,220), Sweden (11,264), and Brazil (10,691).  
+* **Layoff Trends Over Time:** Layoffs peaked in 2022 with 161,711 recorded, followed by 127,277 in 2023. Earlier years saw fewer layoffs, with 81,068 in 2020 and 15,823 in 2021.  
 
 
 ## SQL Queries
